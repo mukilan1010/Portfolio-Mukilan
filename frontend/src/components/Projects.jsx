@@ -381,7 +381,7 @@ const Projects = () => {
               )}
               
               {/* Modal Content */}
-              <h2 className="text-3xl font-bold text-white mb-6 text-cyan-400">
+              <h2 className="text-3xl font-bold">
                 {selectedProject.title}
               </h2>
               
