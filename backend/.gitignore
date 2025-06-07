@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Environment variables file
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directory for uploaded files (if you want to ignore uploads folder)
+uploads/
+
+# Build output (if you have any build step)
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional npm cache folder
+.npm/
+
+# Optional REPL history
+.node_repl_history
