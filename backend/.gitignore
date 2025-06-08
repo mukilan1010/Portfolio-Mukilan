@@ -12,7 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Directory for uploaded files (if you want to ignore uploads folder)
-uploads/
+
 
 # Build output (if you have any build step)
 dist/
