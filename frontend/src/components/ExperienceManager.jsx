@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const ExperienceManager = () => {
+
+  const navigate=useNavigate();
   const [experiences, setExperiences] = useState([]);
   const [formData, setFormData] = useState({
     company: '',
