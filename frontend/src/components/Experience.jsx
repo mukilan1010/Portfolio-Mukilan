@@ -58,7 +58,7 @@ const Experience = () => {
     const fetchExperiences = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/api/experiences");
+        const response = await fetch("https://portfolio-mukilan-2.onrender.com/api/experiences");
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

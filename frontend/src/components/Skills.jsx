@@ -59,7 +59,7 @@ const Skills = () => {
     const fetchSkills = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/skills');
+        const response = await fetch('https://portfolio-mukilan-2.onrender.com/api/skills');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

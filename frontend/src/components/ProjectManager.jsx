@@ -29,7 +29,7 @@ const ProjectManager = () => {
     // Fetch projects with token auth header if needed
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/projects", {
+        const res = await axios.get("https://portfolio-mukilan-2.onrender.com/api/projects", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProjects(res.data);

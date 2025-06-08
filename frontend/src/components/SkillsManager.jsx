@@ -56,7 +56,7 @@ const SkillsManager = () => {
   const fetchSkills = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/skills');
+      const response = await fetch('https://portfolio-mukilan-2.onrender.com/api/skills');
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setSkillCategories(data);
@@ -73,7 +73,7 @@ const SkillsManager = () => {
     if (!newCategory.category.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/skills', {
+      const response = await fetch('https://portfolio-mukilan-2.onrender.com/api/skills', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -97,7 +97,7 @@ const SkillsManager = () => {
     if (!newSkill.name.trim() || !selectedCategoryId) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/skills/${selectedCategoryId}/skill`, {
+      const response = await fetch(`https://portfolio-mukilan-2.onrender.com/api/skills/${selectedCategoryId}/skill`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -126,7 +126,7 @@ const SkillsManager = () => {
     if (!window.confirm('Are you sure you want to delete this entire category and all its skills?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/skills/${categoryId}`, {
+      const response = await fetch(`https://portfolio-mukilan-2.onrender.com/api/skills/${categoryId}`, {
         method: 'DELETE'
       });
       if (!response.ok) throw new Error('Failed to delete category');
@@ -141,7 +141,7 @@ const SkillsManager = () => {
     if (!window.confirm('Are you sure you want to delete this skill?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/skills/${categoryId}/skill/${skillIndex}`, {
+      const response = await fetch(`https://portfolio-mukilan-2.onrender.com/api/skills/${categoryId}/skill/${skillIndex}`, {
         method: 'DELETE'
       });
       if (!response.ok) throw new Error('Failed to delete skill');
@@ -157,7 +157,7 @@ const SkillsManager = () => {
   // Edit category
   const handleEditCategory = async (categoryId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/skills/${categoryId}`, {
+      const response = await fetch(`https://portfolio-mukilan-2.onrender.com/api/skills/${categoryId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editCategoryData)
@@ -177,7 +177,7 @@ const SkillsManager = () => {
   // Edit skill
   const handleEditSkill = async (categoryId, skillIndex) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/skills/${categoryId}/skill/${skillIndex}`, {
+      const response = await fetch(`https://portfolio-mukilan-2.onrender.com/api/skills/${categoryId}/skill/${skillIndex}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

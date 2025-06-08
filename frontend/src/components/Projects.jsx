@@ -58,7 +58,7 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/projects');
+        const response = await fetch('https://portfolio-mukilan-2.onrender.com/api/projects');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -203,7 +203,7 @@ const Projects = () => {
                   <div className="relative h-48 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800">
                     {project.screenshotUrl ? (
                       <img 
-                        src={`http://localhost:5000${project.screenshotUrl}`}
+                        src={`https://portfolio-mukilan-2.onrender.com${project.screenshotUrl}`}
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
@@ -373,7 +373,7 @@ const Projects = () => {
               {selectedProject.screenshotUrl && (
                 <div className="mb-8 rounded-xl overflow-hidden">
                   <img 
-                    src={`http://localhost:5000${selectedProject.screenshotUrl}`}
+                    src={`https://portfolio-mukilan-2.onrender.com${selectedProject.screenshotUrl}`}
                     alt={selectedProject.title}
                     className="w-full h-64 object-cover"
                   />

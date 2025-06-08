@@ -105,7 +105,7 @@ const ContactForm = () => {
   };
 
   const submitToAPI = async (contactData) => {
-    const response = await fetch('http://localhost:5000/api/contacts', {
+    const response = await fetch('https://portfolio-mukilan-2.onrender.com/api/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

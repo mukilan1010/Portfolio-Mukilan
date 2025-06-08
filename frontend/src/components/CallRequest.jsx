@@ -17,7 +17,7 @@ const CallRequest = () => {
 
     const fetchContacts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/contacts", {
+        const res = await axios.get("https://portfolio-mukilan-2.onrender.com/api/contacts", {
           headers: { Authorization: `Bearer ${token}` }, // if backend requires auth header
         });
         if (res.data.success) {

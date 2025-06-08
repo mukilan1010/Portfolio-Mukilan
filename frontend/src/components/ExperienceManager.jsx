@@ -25,7 +25,7 @@ const ExperienceManager = () => {
 
    const fetchExperiences = async (token) => {
     try {
-      const res = await axios.get('http://localhost:5000/api/experiences', {
+      const res = await axios.get('https://portfolio-mukilan-2.onrender.com/api/experiences', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,11 +69,11 @@ const ExperienceManager = () => {
     try {
       if (editingId) {
         // Update experience
-        const res = await axios.put(`http://localhost:5000/api/experiences/${editingId}`, formData);
+        const res = await axios.put(`https://portfolio-mukilan-2.onrender.com/api/experiences/${editingId}`, formData);
         setExperiences(experiences.map(exp => (exp._id === editingId ? res.data : exp)));
       } else {
         // Add new experience
-        const res = await axios.post('http://localhost:5000/api/experiences', formData);
+        const res = await axios.post('https://portfolio-mukilan-2.onrender.com/api/experiences', formData);
         setExperiences([...experiences, res.data]);
       }
       resetForm();
@@ -97,7 +97,7 @@ const ExperienceManager = () => {
     if (!window.confirm('Are you sure you want to delete this experience?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/experiences/${id}`);
+      await axios.delete(`https://portfolio-mukilan-2.onrender.com/api/experiences/${id}`);
       setExperiences(experiences.filter(exp => exp._id !== id));
     } catch (error) {
       console.error('Failed to delete experience', error);
