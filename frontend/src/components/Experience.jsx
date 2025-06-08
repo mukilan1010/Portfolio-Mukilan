@@ -216,7 +216,7 @@ const Experience = () => {
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-cyan-400 to-purple-400 bg-clip-text text-transparent leading-tight">
-            Experience <span className="text-purple-400">Timeline</span>
+            Experience
           </h1>
 
           <p className="text-xl text-gray-300 leading-relaxed">
@@ -224,13 +224,13 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Timeline */}
+        
         <div className="max-w-4xl mx-auto mb-16">
           <div className="relative">
-            {/* Timeline Line */}
+           
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-purple-500 to-cyan-400 transform md:-translate-x-1/2"></div>
 
-            {/* Timeline Items */}
+
             <div className="space-y-12">
               {experiences.map((experience, index) => (
                 <div

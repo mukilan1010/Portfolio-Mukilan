@@ -1,8 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import profileImage from "../assets/Mukilan.png"; // adjust the path based on file location
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import {useNavigate, useNavigationType } from 'react-router-dom';
+
+
+
 
 const Home = () => {
+  
+  const navigate=useNavigate();
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const canvasRef = useRef(null);
@@ -114,64 +121,29 @@ const Home = () => {
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="text-cyan-400 text-lg font-mono animate-pulse">
-                  Hello, I'm Mukilan N.
+                  Hello, I'm
                 </span>
               </div>
 
-              <h1 className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-cyan-400 to-purple-400 bg-clip-text text-transparent leading-tight">
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0s" }}
-                >
-                  Y
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.1s" }}
-                >
-                  o
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.2s" }}
-                >
-                  u
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.3s" }}
-                >
-                  r
-                </span>
-                <span
-                  className="inline-block animate-bounce mx-4"
-                  style={{ animationDelay: "0.4s" }}
-                ></span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.5s" }}
-                >
-                  N
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.6s" }}
-                >
-                  a
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.7s" }}
-                >
-                  m
-                </span>
-                <span
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: "0.8s" }}
-                >
-                  e
-                </span>
-              </h1>
+<h1 className="text-6xl lg:text-7xl font-bold leading-tight flex flex-wrap">
+  {"MUKILAN".split("").map((char, index) => (
+    <span
+      key={index}
+      className="inline-block animate-bounce bg-gradient-to-r from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {char}
+    </span>
+  ))}
+  <span
+    className="inline-block animate-bounce mx-4 bg-gradient-to-r from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent"
+    style={{ animationDelay: `${7 * 0.1}s` }}
+  >
+    N
+  </span>
+</h1>
+
+
 
               <div className="text-xl lg:text-2xl text-gray-300 font-light">
                 <span className="typing-animation">
@@ -189,12 +161,12 @@ const Home = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-6">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25" onClick={()=>navigate('/projects')}>
                 <span className="relative z-10">View My Work</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/25">
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/25" onClick={()=>navigate('/contact')}>
                 Get in Touch
               </button>
             </div>
