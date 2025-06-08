@@ -136,7 +136,7 @@ const ContactForm = () => {
       
       setSubmitStatus({
         type: 'success',
-        message: `Thank you ${formData.name}! Your message has been stored successfully.`,
+        message: `Thank you ${formData.name}! Your message has been Recieved successfully.`,
         contactId: result.data.id
       });
       
