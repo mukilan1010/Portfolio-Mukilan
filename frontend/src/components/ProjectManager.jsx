@@ -88,13 +88,13 @@ const ProjectManager = () => {
 
       if (editingId) {
         // update existing
-        const res = await axios.put(`http://localhost:5000/api/projects/${editingId}`, data, {
+        const res = await axios.put(`https://portfolio-mukilan-2.onrender.com/api/projects/${editingId}`, data, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         setProjects(projects.map(p => (p._id === editingId ? res.data : p)));
       } else {
         // create new
-        const res = await axios.post('http://localhost:5000/api/projects', data, {
+        const res = await axios.post('https://portfolio-mukilan-2.onrender.com/api/projects', data, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         setProjects([...projects, res.data]);
@@ -125,7 +125,7 @@ const ProjectManager = () => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`https://portfolio-mukilan-2.onrender.com/api/projects/${id}`);
       setProjects(projects.filter(p => p._id !== id));
     } catch (error) {
       console.error('Failed to delete project', error);
@@ -244,7 +244,7 @@ const ProjectManager = () => {
             <div className="flex flex-col items-end">
               {project.screenshotUrl && (
   <img
-    src={`http://localhost:5000/uploads/${project.screenshotUrl}`}
+    src={`https://portfolio-mukilan-2.onrender.com/${project.screenshotUrl}`}
     alt={`${project.title} screenshot`}
     className="w-32 h-20 object-cover rounded mb-2"
   />
